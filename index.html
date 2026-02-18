@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afrateq HBOT | Namibia's Premier Hyperbaric Oxygen Therapy Centre</title>
+  <meta name="description" content="Afrateq HBOT is Namibia's premier hyperbaric oxygen therapy centre in Swakopmund. Book your session today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--teal:#0d5c63;--teal-light:#1a7a84;--sage:#7c9a92;--sage-light:#a8c4bc;--white:#fafafa;--grey-light:#f0f4f3;--grey-mid:#c8d5d3;--text-dark:#1a2e2c;--text-mid:#3d5c59;--text-light:#6b8c88;--accent:#e8f4f2;--shadow:0 4px 24px rgba(13,92,99,.10);--shadow-lg:0 8px 40px rgba(13,92,99,.18);--radius:12px;--radius-lg:20px;--tr:.3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text-dark);line-height:1.65;overflow-x:hidden}
+    img{max-width:100%;display:block} a{text-decoration:none;color:inherit}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 5%;display:flex;align-items:center;justify-content:space-between;transition:background var(--tr),box-shadow var(--tr),padding var(--tr)}
+    nav.scrolled{background:rgba(255,255,255,.97);box-shadow:var(--shadow);padding:12px 5%}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.18rem;color:#fff;transition:color var(--tr)}
+    nav.scrolled .logo{color:var(--teal)}
+    .logo-box{width:34px;height:34px;background:var(--teal);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.78rem;font-weight:800}
+    .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+    .nav-links a{font-size:.86rem;font-weight:500;color:rgba(255,255,255,.9);transition:color var(--tr)}
+    nav.scrolled .nav-links a{color:var(--text-mid)}
+    .nav-links a:hover,nav.scrolled .nav-links a:hover{color:var(--teal)}
+    .nav-cta{background:#fff!important;color:var(--teal)!important;padding:9px 22px!important;border-radius:50px!important;font-weight:600!important}
+    nav.scrolled .nav-cta{background:var(--teal)!important;color:#fff!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all var(--tr)}
+    nav.scrolled .hamburger span{background:var(--teal)}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;inset:0;background:rgba(13,92,99,.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:#fff;font-size:1.4rem;font-weight:600;transition:opacity var(--tr)}
+    #hero{position:relative;height:100vh;min-height:620px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80') center/cover no-repeat}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,92,99,.88) 0%,rgba(13,92,99,.62) 50%,rgba(7,40,44,.82) 100%)}
+    .hero-content{position:relative;z-index:1;max-width:780px;padding:0 24px}
+    .hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:24px}
+    .hero-content h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px}
+    .hero-content h1 em{font-style:normal;color:var(--sage-light)}
+    .hero-content p{font-size:clamp(.95rem,2vw,1.12rem);color:rgba(255,255,255,.85);margin-bottom:40px;font-weight:300}
+    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:50px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:all var(--tr)}
+    .btn-w{background:#fff;color:var(--teal)}
+    .btn-w:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+    .btn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+    .btn-o:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+    .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;animation:bonce 2s infinite;cursor:pointer}
+    .scroll-line{width:1px;height:34px;background:rgba(255,255,255,.4)}
+    @keyframes bonce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+    section{padding:96px 5%}
+    .section-label{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+    .section-title{font-size:clamp(1.75rem,4vw,2.45rem);font-weight:800;color:var(--text-dark);line-height:1.2;margin-bottom:13px}
+    .section-sub{font-size:.98rem;color:var(--text-light);max-width:530px;margin-bottom:52px}
+    .max{max-width:1200px;margin:0 auto}
+    #about{background:var(--grey-light)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
+    .about-img-wrap{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+    .about-img-wrap img{width:100%;height:450px;object-fit:cover}
+    .img-badge{position:absolute;bottom:22px;left:22px;background:#fff;border-radius:var(--radius);padding:13px 17px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px}
+    .badge-i{width:40px;height:40px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+    .badge-t strong{display:block;font-size:1.05rem;font-weight:700;color:var(--teal)}
+    .badge-t span{font-size:.74rem;color:var(--text-light)}
+    .about-text .section-sub{margin-bottom:36px}
+    .benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:36px}
+    .b-card{background:#fff;border-radius:var(--radius);padding:17px;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:11px;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease,box-shadow var(--tr)}
+    .b-card.visible{opacity:1;transform:translateY(0)}
+    .b-card:hover{box-shadow:var(--shadow-lg)}
+    .b-icon{width:38px;height:38px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .b-card h4{font-size:.86rem;font-weight:700;color:var(--text-dark);margin-bottom:3px}
+    .b-card p{font-size:.78rem;color:var(--text-light);line-height:1.5}
+    #services{background:#fff}
+    .svc-header{text-align:center}.svc-header .section-sub{margin:0 auto 52px}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .svc-card{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);transition:transform var(--tr),box-shadow var(--tr);opacity:0;transform:translateY(22px)}
+    .svc-card.visible{opacity:1;transform:translateY(0)}
+    .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .svc-img{height:190px;overflow:hidden}
+    .svc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .svc-card:hover .svc-img img{transform:scale(1.06)}
+    .svc-body{padding:24px;background:#fff}
+    .svc-icon{font-size:1.4rem;margin-bottom:9px}
+    .svc-body h3{font-size:1.08rem;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+    .svc-body p{font-size:.84rem;color:var(--text-light);line-height:1.65;margin-bottom:14px}
+    .svc-tag{display:inline-block;background:var(--accent);color:var(--teal);font-size:.7rem;font-weight:600;padding:4px 11px;border-radius:50px}
+    #why{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-light) 100%);position:relative;overflow:hidden}
+    #why::before{content:'';position:absolute;top:-40%;right:-15%;width:480px;height:480px;background:rgba(255,255,255,.04);border-radius:50%}
+    .why-header{text-align:center;margin-bottom:52px}
+    .why-header .section-label{color:var(--sage-light)}
+    .why-header .section-title{color:#fff}
+    .why-header .section-sub{color:rgba(255,255,255,.74);margin:0 auto}
+    .usp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .usp-card{background:rgba(255,255,255,.09);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;transition:background var(--tr),transform var(--tr);opacity:0;transform:translateY(18px)}
+    .usp-card.visible{opacity:1;transform:translateY(0)}
+    .usp-card:hover{background:rgba(255,255,255,.14);transform:translateY(-4px)}
+    .usp-icon{font-size:2.1rem;margin-bottom:13px}
+    .usp-card h3{font-size:.94rem;font-weight:700;color:#fff;margin-bottom:8px}
+    .usp-card p{font-size:.81rem;color:rgba(255,255,255,.73);line-height:1.6}
+    #booking{background:var(--grey-light)}
+    .booking-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+    .booking-info h2{font-size:clamp(1.65rem,3vw,2.2rem);font-weight:800;color:var(--text-dark);margin-bottom:13px;line-height:1.2}
+    .booking-info>p{color:var(--text-light);margin-bottom:34px;font-size:.95rem}
+    .steps{display:flex;flex-direction:column;gap:18px}
+    .step{display:flex;align-items:flex-start;gap:13px}
+    .step-n{width:32px;height:32px;background:var(--teal);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+    .step h4{font-size:.88rem;font-weight:700;color:var(--text-dark);margin-bottom:2px}
+    .step p{font-size:.79rem;color:var(--text-light)}
+    .bform{background:#fff;border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg)}
+    .bform-title{font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:24px}
+    .fg{margin-bottom:16px}
+    .fr{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    label{display:block;font-size:.78rem;font-weight:600;color:var(--text-mid);margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px 14px;border:2px solid var(--grey-mid);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:.87rem;color:var(--text-dark);background:var(--white);transition:border-color var(--tr),box-shadow var(--tr);outline:none;-webkit-appearance:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(13,92,99,.08)}
+    textarea{resize:vertical;min-height:82px}
+    input.invalid,select.invalid,textarea.invalid{border-color:#e05252}
+    .btn-sub{width:100%;padding:14px;background:var(--teal);color:#fff;border:none;border-radius:50px;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:all var(--tr);margin-top:6px}
+    .btn-sub:hover{background:var(--teal-light);transform:translateY(-1px);box-shadow:var(--shadow)}
+    .fnote{text-align:center;font-size:.73rem;color:var(--text-light);margin-top:9px}
+    #testimonials{background:#fff}
+    .testi-wrap{max-width:880px;margin:0 auto;text-align:center}
+    .testi-wrap .section-sub{margin:0 auto 50px}
+    .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .testi-card{background:var(--grey-light);border-radius:var(--radius-lg);padding:32px 28px;text-align:left;transition:box-shadow var(--tr),transform var(--tr);opacity:0;transform:translateY(18px)}
+    .testi-card.visible{opacity:1;transform:translateY(0)}
+    .testi-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .tq{font-size:3rem;color:var(--sage);line-height:.7;margin-bottom:14px;font-family:Georgia,serif}
+    .stars{color:#f5a623;font-size:.86rem;margin-bottom:12px}
+    .tt{font-size:.93rem;color:var(--text-mid);line-height:1.7;margin-bottom:20px;font-style:italic}
+    .ta{display:flex;align-items:center;gap:11px}
+    .t-avatar{width:40px;height:40px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem}
+    .t-name strong{display:block;font-size:.86rem;color:var(--text-dark)}
+    .t-name span{font-size:.74rem;color:var(--text-light)}
+    #faq{background:var(--grey-light)}
+    .faq-wrap{max-width:760px;margin:0 auto;text-align:center}
+    .faq-wrap .section-sub{margin:0 auto 46px}
+    .faq-list{display:flex;flex-direction:column;gap:9px;text-align:left}
+    .faq-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:19px 21px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--text-dark);text-align:left;transition:color var(--tr);gap:13px}
+    .faq-q:hover,.faq-q.open{color:var(--teal)}
+    .faq-chev{width:22px;height:22px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform var(--tr),background var(--tr);font-size:.68rem}
+    .faq-q.open .faq-chev{transform:rotate(180deg);background:var(--teal);color:#fff}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-a.open{max-height:250px}
+    .faq-a-inner{padding:0 21px 19px;font-size:.86rem;color:var(--text-light);line-height:1.7}
+    #contact{background:#fff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+    .contact-info .section-sub{margin-bottom:36px}
+    .c-items{display:flex;flex-direction:column;gap:17px;margin-bottom:32px}
+    .c-item{display:flex;align-items:flex-start;gap:13px}
+    .c-icon{width:42px;height:42px;background:var(--accent);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .c-item h4{font-size:.8rem;font-weight:700;color:var(--text-dark);margin-bottom:2px}
+    .c-item p,.c-item a{font-size:.86rem;color:var(--text-light)}
+    .c-item a:hover{color:var(--teal)}
+    .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.92rem;transition:all var(--tr)}
+    .wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.35)}
+    .map-box{border-radius:var(--radius-lg);height:330px;background:var(--grey-light);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--text-light);border:2px dashed var(--grey-mid);border-radius:var(--radius-lg)}
+    .map-box .mi{font-size:2.6rem}
+    .map-box p{font-size:.88rem}
+    .map-box strong{color:var(--teal)}
+    footer{background:var(--text-dark);color:rgba(255,255,255,.65);padding:54px 5% 30px}
+    .footer-top{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:52px;margin-bottom:46px}
+    .f-brand p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.5);max-width:270px;margin-top:13px}
+    .f-col h4{font-size:.79rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .f-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .f-col ul a{font-size:.83rem;color:rgba(255,255,255,.5);transition:color var(--tr)}
+    .f-col ul a:hover{color:var(--sage-light)}
+    .footer-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .footer-bot p{font-size:.78rem;color:rgba(255,255,255,.38)}
+    .disclaimer{font-size:.7rem;color:rgba(255,255,255,.28);max-width:560px;line-height:1.6}
+    .fade-in{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    .toast{position:fixed;bottom:30px;right:30px;background:var(--teal);color:#fff;padding:15px 22px;border-radius:var(--radius);box-shadow:var(--shadow-lg);font-size:.88rem;font-weight:500;z-index:9999;transform:translateY(80px);opacity:0;transition:all .4s ease;max-width:310px}
+    .toast.show{transform:translateY(0);opacity:1}
+    @media(max-width:1024px){.usp-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr}.f-brand{grid-column:span 2}}
+    @media(max-width:768px){section{padding:68px 5%}.nav-links{display:none}.hamburger{display:flex}.about-grid,.booking-grid,.contact-grid{grid-template-columns:1fr;gap:40px}.about-img-wrap img{height:270px}.svc-grid{grid-template-columns:1fr}.usp-grid{grid-template-columns:1fr 1fr}.testi-grid{grid-template-columns:1fr}.fr{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr;gap:28px}.f-brand{grid-column:span 1}.footer-bot{flex-direction:column;align-items:flex-start}}
+    @media(max-width:480px){.benefit-grid{grid-template-columns:1fr}.usp-grid{grid-template-columns:1fr}.bform{padding:22px 18px}}
+  </style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why Us</a>
+  <a href="#booking" onclick="closeMobile()">Book Now</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="nav">
+  <div class="logo"><div class="logo-box">AH</div>Afrateq HBOT</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#booking" class="nav-cta">Book Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">&#127475;&#127462; Swakopmund, Namibia</div>
+    <h1>Breathe Better.<br><em>Heal Faster.</em></h1>
+    <p>Namibia's Premier Hyperbaric Oxygen Therapy Centre — certified, coastal, and built for results.</p>
+    <div class="hero-btns">
+      <a href="#booking" class="btn btn-w">&#128197; Book a Session</a>
+      <a href="#about" class="btn btn-o">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="max">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-in">
+        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80" alt="HBOT wellness therapy" loading="lazy"/>
+        <div class="img-badge">
+          <div class="badge-i">&#127942;</div>
+          <div class="badge-t"><strong>Certified</strong><span>Operators &amp; Equipment</span></div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <p class="section-label">What is HBOT?</p>
+        <h2 class="section-title">Healing at the<br>cellular level</h2>
+        <p class="section-sub">Hyperbaric Oxygen Therapy delivers 100% pure oxygen in a pressurised chamber, flooding your body with up to 20x normal oxygen levels — accelerating healing, reducing inflammation, and boosting recovery.</p>
+        <div class="benefit-grid">
+          <div class="b-card"><div class="b-icon">&#129657;</div><div><h4>Wound Healing</h4><p>Heals chronic wounds, surgical sites &amp; diabetic ulcers fast.</p></div></div>
+          <div class="b-card"><div class="b-icon">&#127939;</div><div><h4>Sports Recovery</h4><p>Cuts recovery time, reduces soreness &amp; boosts performance.</p></div></div>
+          <div class="b-card"><div class="b-icon">&#129496;</div><div><h4>General Wellness</h4><p>Improves energy, sleep, focus and overall vitality.</p></div></div>
+          <div class="b-card"><div class="b-icon">&#128308;</div><div><h4>Diving &amp; DCS</h4><p>Gold-standard treatment for decompression sickness.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="max">
+    <div class="svc-header fade-in">
+      <p class="section-label">Our Services</p>
+      <h2 class="section-title">Tailored therapy programmes</h2>
+      <p class="section-sub">Whether you're recovering from injury, optimising performance, or simply investing in your health — we have a programme for you.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1544367563-12123d8965cd?w=800&q=80" alt="Medical HBOT" loading="lazy"/></div>
+        <div class="svc-body">
+          <div class="svc-icon">&#9877;&#65039;</div>
+          <h3>Medical HBOT</h3>
+          <p>Prescribed hyperbaric therapy for wound healing, radiation injury, carbon monoxide poisoning, DCS, and neurological conditions.</p>
+          <span class="svc-tag">Clinically supervised</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80" alt="Sports Recovery" loading="lazy"/></div>
+        <div class="svc-body">
+          <div class="svc-icon">&#127947;</div>
+          <h3>Sports Recovery</h3>
+          <p>Accelerate muscle recovery, reduce inflammation, and get back to peak performance faster. Used by elite athletes worldwide.</p>
+          <span class="svc-tag">Performance optimised</span>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="General Wellness" loading="lazy"/></div>
+        <div class="svc-body">
+          <div class="svc-icon">&#127807;</div>
+          <h3>General Wellness</h3>
+          <p>Boost energy, improve cognitive clarity, enhance immunity, and slow cellular ageing with regular wellness sessions.</p>
+          <span class="svc-tag">Wellness &amp; longevity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AFRATEQ -->
+<section id="why">
+  <div class="max">
+    <div class="why-header fade-in">
+      <p class="section-label">Why Choose Us</p>
+      <h2 class="section-title">Namibia's only dedicated HBOT centre</h2>
+      <p class="section-sub">We're not a side offering — HBOT is all we do, and we do it exceptionally well.</p>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-card"><div class="usp-icon">&#127757;</div><h3>Only HBOT in the Region</h3><p>The sole dedicated hyperbaric centre serving Namibia's Erongo coast — no need to travel abroad.</p></div>
+      <div class="usp-card"><div class="usp-icon">&#127465;&#127466;</div><h3>German-Speaking Staff</h3><p>Full German-language support for Swakopmund's large German-speaking community and visitors.</p></div>
+      <div class="usp-card"><div class="usp-icon">&#128203;</div><h3>Certified Operators</h3><p>All sessions conducted by internationally certified hyperbaric technicians with full safety protocols.</p></div>
+      <div class="usp-card"><div class="usp-icon">&#127754;</div><h3>Coastal Location</h3><p>Conveniently located in Swakopmund, serving the entire coast from Walvis Bay to Henties Bay.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="max">
+    <div class="booking-grid">
+      <div class="booking-info fade-in">
+        <h2>Book Your Session</h2>
+        <p>Ready to start your healing journey? Fill in the form and our team will confirm your booking within 2 hours.</p>
+        <div class="steps">
+          <div class="step"><div class="step-n">1</div><div><h4>Choose your service</h4><p>Select the therapy type that fits your needs.</p></div></div>
+          <div class="step"><div class="step-n">2</div><div><h4>Pick a date &amp; time</h4><p>We have sessions from 9:00 AM to 5:00 PM, Mon–Sat.</p></div></div>
+          <div class="step"><div class="step-n">3</div><div><h4>We confirm</h4><p>You'll receive a confirmation call or WhatsApp within 2 hours.</p></div></div>
+          <div class="step"><div class="step-n">4</div><div><h4>Arrive &amp; breathe</h4><p>Arrive 15 min early. Wear comfortable, natural-fibre clothing.</p></div></div>
+        </div>
+      </div>
+      <div class="bform fade-in">
+        <p class="bform-title">&#128197; Schedule a Session</p>
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+          <div class="fg">
+            <label for="service">Service *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service...</option>
+              <option>Medical HBOT</option>
+              <option>Sports Recovery</option>
+              <option>General Wellness</option>
+              <option>Diving / DCS Treatment</option>
+              <option>Consultation only</option>
+            </select>
+          </div>
+          <div class="fr">
+            <div class="fg">
+              <label for="bdate">Preferred Date *</label>
+              <input type="date" id="bdate" name="date" required />
+            </div>
+            <div class="fg">
+              <label for="btime">Preferred Time *</label>
+              <select id="btime" name="time" required>
+                <option value="">Select time...</option>
+                <option>09:00</option>
+                <option>11:00</option>
+                <option>13:00</option>
+                <option>15:00</option>
+                <option>17:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="fr">
+            <div class="fg">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required />
+            </div>
+            <div class="fg">
+              <label for="fphone">Phone / WhatsApp *</label>
+              <input type="tel" id="fphone" name="phone" placeholder="+264..." required />
+            </div>
+          </div>
+          <div class="fg">
+            <label for="femail">Email Address</label>
+            <input type="email" id="femail" name="email" placeholder="your@email.com" />
+          </div>
+          <div class="fg">
+            <label for="fnotes">Additional Notes</label>
+            <textarea id="fnotes" name="notes" placeholder="Medical conditions, questions, or anything else we should know..."></textarea>
+          </div>
+          <button type="submit" class="btn-sub">Confirm Booking Request &#8594;</button>
+          <p class="fnote">&#128274; Your information is private and never shared.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testi-wrap">
+    <p class="section-label">Testimonials</p>
+    <h2 class="section-title">What our clients say</h2>
+    <p class="section-sub">Real results from real people who made the choice to invest in their health.</p>
+    <div class="testi-grid">
+      <div class="testi-card fade-in">
+        <div class="tq">"</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tt">After my diving accident, the team at Afrateq had me in the chamber within the hour. The professionalism and care were outstanding. I was back to normal within days — I honestly can't recommend them enough.</p>
+        <div class="ta">
+          <div class="t-avatar">MV</div>
+          <div class="t-name"><strong>Marco van der Berg</strong><span>Diving instructor, Swakopmund</span></div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="tq">"</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tt">I did a 10-session wellness package after surgery and the difference in my healing was remarkable. The staff explained everything clearly and the facility is spotless. Worth every cent.</p>
+        <div class="ta">
+          <div class="t-avatar">SH</div>
+          <div class="t-name"><strong>Susanne Hoffmann</strong><span>Nurse &amp; wellness client, Walvis Bay</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-wrap">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common questions</h2>
+    <p class="section-sub">Everything you need to know before your first session.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is HBOT safe? Are there any side effects?
+          <span class="faq-chev">&#9660;</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">HBOT is very safe when conducted by certified operators in a proper clinical setting. The most common side effect is mild ear discomfort during pressurisation, similar to what you feel on an aeroplane. Our technicians will guide you through equalisation techniques. Serious complications are extremely rare.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long is a typical session?
+          <span class="faq-chev">&#9660;</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Most sessions last 60–90 minutes, including pressurisation and depressurisation time. You'll be breathing pure oxygen comfortably inside the chamber. Many clients read, listen to music, or simply rest during their session.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many sessions will I need?
+          <span class="faq-chev">&#9660;</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">It depends on your condition and goals. A single session can help with acute DCS or sports recovery. Chronic conditions typically require 20–40 sessions for optimal results. We'll discuss a recommended protocol during your initial consultation.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need a doctor's referral?
+          <span class="faq-chev">&#9660;</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">A referral is not required for wellness sessions. For medical HBOT (treatment of specific conditions), we recommend a consultation with your doctor and our clinical team first. We work alongside your existing healthcare providers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="max">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">We're here to help</h2>
+        <p class="section-sub">Have questions before booking? Reach out via any channel and we'll get back to you promptly.</p>
+        <div class="c-items">
+          <div class="c-item">
+            <div class="c-icon">&#128222;</div>
+            <div><h4>Phone</h4><p><a href="tel:+264000000000">+264 (0) 00 000 0000</a></p></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">&#128140;</div>
+            <div><h4>Email</h4><p><a href="mailto:info@afrateqhbot.com">info@afrateqhbot.com</a></p></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">&#128205;</div>
+            <div><h4>Location</h4><p>Swakopmund, Erongo Region<br>Namibia</p></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">&#128337;</div>
+            <div><h4>Hours</h4><p>Monday – Saturday: 08:00 – 18:00<br>Sunday: Emergency DCS only</p></div>
+          </div>
+        </div>
+        <a href="https://wa.me/264000000000?text=Hi%2C%20I%27d%20like%20to%20book%20an%20HBOT%20session" target="_blank" class="wa-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="fade-in">
+        <div class="map-box">
+          <div class="mi">&#128205;</div>
+          <p><strong>Swakopmund, Namibia</strong></p>
+          <p>Exact address provided on booking confirmation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="f-brand">
+      <div class="logo" style="color:white"><div class="logo-box">AH</div>Afrateq HBOT</div>
+      <p>Namibia's premier hyperbaric oxygen therapy centre. Certified, professional, and dedicated to your recovery and wellness.</p>
+    </div>
+    <div class="f-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About HBOT</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#why">Why Afrateq</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#booking">Book a Session</a></li>
+        <li><a href="tel:+264000000000">+264 (0) 00 000 0000</a></li>
+        <li><a href="mailto:info@afrateqhbot.com">info@afrateqhbot.com</a></li>
+        <li><a href="#contact">Swakopmund, Namibia</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>&copy; 2026 Afrateq HBOT (Pty) Ltd. All rights reserved.</p>
+    <p class="disclaimer">&#9888;&#65039; Medical disclaimer: HBOT is not a substitute for conventional medical treatment. Always consult a qualified healthcare professional. Results may vary.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">&#9989; Booking request received! We'll confirm within 2 hours.</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  function toggleMobile() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Set min date for booking
+  const dateInput = document.getElementById('bdate');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    dateInput.min = yyyy + '-' + mm + '-' + dd;
+  }
+
+  // Booking form submit
+  function submitBooking(e) {
+    e.preventDefault();
+    const form = document.getElementById('bookingForm');
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(field => {
+      field.classList.remove('invalid');
+      if (!field.value.trim()) {
+        field.classList.add('invalid');
+        valid = false;
+      }
+    });
+    if (!valid) return;
+
+    // Save to localStorage
+    const booking = {
+      service: form.service.value,
+      date: form.date.value,
+      time: form.time.value,
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      notes: form.notes.value,
+      submittedAt: new Date().toISOString()
+    };
+    const bookings = JSON.parse(localStorage.getItem('afrateq_bookings') || '[]');
+    bookings.push(booking);
+    localStorage.setItem('afrateq_bookings', JSON.stringify(bookings));
+
+    // Show toast
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 5000);
+
+    // Reset form
+    form.reset();
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+    // Open this one if it was closed
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.classList.add('open');
+    }
+  }
+
+  // Intersection Observer for animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in, .b-card, .svc-card, .usp-card, .testi-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Staggered animation for cards
+  document.querySelectorAll('.b-card, .svc-card, .usp-card, .testi-card').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.1 + 's';
+  });
+</script>
+</body>
+</html>
